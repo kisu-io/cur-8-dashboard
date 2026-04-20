@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUR-8 × GoodFellas — Behavioural Code</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .badge {
+            display: inline-block;
+            background: #e94560;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-top: 15px;
+        }
+        section {
+            background: white;
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #1a1a2e;
+            border-bottom: 3px solid #e94560;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        h3 {
+            color: #16213e;
+            margin: 20px 0 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+        }
+        tr:hover {
+            background: #f8f9fa;
+        }
+        .time-slot {
+            background: #e94560;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 5px;
+            font-size: 0.85em;
+        }
+        .module {
+            background: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #e94560;
+            margin: 15px 0;
+        }
+        pre {
+            background: #1a1a2e;
+            color: #eee;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 0.85em;
+        }
+        code {
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .overview-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .overview-item strong {
+            display: block;
+            font-size: 1.5em;
+            color: #e94560;
+        }
+        .zone-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8em; }
+            table { font-size: 0.85em; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>CUR-8 × GoodFellas</h1>
+            <p>Behavioural Code & Staff Training Programme</p>
+            <span class="badge">Kissa-Style Venue</span>
+        </div>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>📊 Project Overview</h2>
+            <div class="overview-grid">
+                <div class="overview-item">
+                    <strong>68</strong>
+                    <span>Seats</span>
+                </div>
+                <div class="overview-item">
+                    <strong>3</strong>
+                    <span>Venue Zones</span>
+                </div>
+                <div class="overview-item">
+                    <strong>4.06B</strong>
+                    <span>VND Investment</span>
+                </div>
+                <div class="overview-item">
+                    <strong>18</strong>
+                    <span>Customer Rules</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🏢 Venue Zones</h2>
+            <div class="zone-card">
+                <h3>☕ Cafe Zone</h3>
+                <p><strong>Slot A (Morning 07:00–11:00)</strong></p>
+                <p>Coffee/tea only, quiet volume, laptop use encouraged, headphone required above threshold</p>
+            </div>
+            <div class="zone-card">
+                <h3>🍸 Bar Zone</h3>
+                <p><strong>Slot B–C (Afternoon–Evening 11:00–21:00)</strong></p>
+                <p>Alcohol available from 11:00, relaxed atmosphere, full bar service from 17:00</p>
+            </div>
+            <div class="zone-card">
+                <h3>🎵 Sound Lab</h3>
+                <p><strong>Slot D (Performance 21:00–Late)</strong></p>
+                <p>Live performances, DJ nights, standing permitted on dance floor</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>🕐 Time-Based Customer Codes</h2>
+            
+            <h3><span class="time-slot">Slot A</span> Morning (07:00–11:00)</h3>
+            <table>
+                <tr><th>#</th><th>Rule</th><th>Notes</th></tr>
+                <tr><td>C1</td><td>No alcohol — coffee/tea only</td><td>Hard rule</td></tr>
+                <tr><td>C2</td><td>Quiet volume — no loud music</td><td>Background only</td></tr>
+                <tr><td>C3</td><td>Laptop use encouraged, headphone required</td><td>Use indicator if needed</td></tr>
+                <tr><td>C4</td><td>No performance / no stage setup</td><td>—</td></tr>
+                <tr><td>C5</td><td>Maximum stay: 2 hours during peak morning</td><td>Flex if not busy</td></tr>
+            </table>
+
+            <h3><span class="time-slot">Slot B</span> Afternoon (11:00–17:00)</h3>
+            <table>
+                <tr><th>#</th><th>Rule</th><th>Notes</th></tr>
+                <tr><td>C6</td><td>Alcohol available from 11:00</td><td>Draft pour permitted</td></tr>
+                <tr><td>C7</td><td>Volume: ambient background</td><td>Conversation-friendly</td></tr>
+                <tr><td>C8</td><td>Standing/chit-chat allowed</td><td>—</td></tr>
+                <tr><td>C9</td><td>Kids-friendly until 17:00</td><td>After 17:00 → 18+</td></tr>
+            </table>
+
+            <h3><span class="time-slot">Slot C</span> Evening (17:00–21:00)</h3>
+            <table>
+                <tr><th>#</th><th>Rule</th><th>Notes</th></tr>
+                <tr><td>C11</td><td>Full bar service active</td><td>All pour sizes</td></tr>
+                <tr><td>C12</td><td>Volume: elevated but not concert level</td><td>Low-key sets OK</td></tr>
+                <tr><td>C13</td><td>Tables may be reserved for groups</td><td>—</td></tr>
+                <tr><td>C14</td><td>Photography allowed, flash discouraged</td><td>—</td></tr>
+            </table>
+
+            <h3><span class="time-slot">Slot D</span> Performance (21:00–Late)</h3>
+            <table>
+                <tr><th>#</th><th>Rule</th><th>Notes</th></tr>
+                <tr><td>C16</td><td><strong>ID check on entry</strong></td><td>18+ enforced</td></tr>
+                <tr><td>C17</td><td><strong>No standing in front-of-stage zone</strong></td><td>Safety + sight lines</td></tr>
+                <tr><td>C18</td><td><strong>No entry during live acts mid-song</strong></td><td>Door protocol</td></tr>
+                <tr><td>C19</td><td><strong>Volume at artist-defined level</strong></td><td>No complaints</td></tr>
+                <tr><td>C20</td><td><strong>No queueing during live sets</strong></td><td>Wait for break</td></tr>
+                <tr><td>C21</td><td><strong>Zero tolerance: drugs, aggression</strong></td><td>Immediate removal</td></tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>🎭 Event Type Overrides</h2>
+            
+            <h3>Acoustic / Unplugged Night</h3>
+            <table>
+                <tr><th>#</th><th>Rule</th></tr>
+                <tr><td>E1</td><td>Conversation noise must stop during performances — silence protocol</td></tr>
+                <tr><td>E2</td><td>Phone on silent</td></tr>
+                <tr><td>E3</td><td>One person per table leaves during set = one person returns after</td></tr>
+                <tr><td>E4</td><td>Tipping bucket passed at set break only</td></tr>
+            </table>
+
+            <h3>DJ / Electronic Night</h3>
+            <table>
+                <tr><th>#</th><th>Rule</th></tr>
+                <tr><td>E5</td><td>Dance floor zone opens (standing permitted)</td></tr>
+                <tr><td>E6</td><td>No glass on dance floor — drinks decanted to plastic</td></tr>
+                <tr><td>E7</td><td>No flash photography</td></tr>
+                <tr><td>E8</td><td>No entry after 23:00</td></tr>
+            </table>
+
+            <h3>Special Event / Private Booking</h3>
+            <table>
+                <tr><th>#</th><th>Rule</th></tr>
+                <tr><td>E9</td><td>House rules communicated at entry</td></tr>
+                <tr><td>E10</td><td>Private event = venue privatised — no casual walk-ins</td></tr>
+                <tr><td>E11</td><td>External promoter to supply behavioural briefing pre-event</td></tr>
+                <tr><td>E12</td><td>Security ratio: 1 per 50 pax minimum</td></tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>🚫 General Prohibitions (All Slots)</h2>
+            <table>
+                <tr><th>#</th><th>Rule</th></tr>
+                <tr><td>P1</td><td>No smoking inside (outdoor terrace designated area)</td></tr>
+                <tr><td>P2</td><td>No outside alcohol brought in</td></tr>
+                <tr><td>P3</td><td>No shoes on furniture</td></tr>
+                <tr><td>P4</td><td>No harassment of staff or other customers</td></tr>
+                <tr><td>P5</td><td>No unauthorised collection of money/tips</td></tr>
+                <tr><td>P6</td><td>No loudspeaker/amplified busking at entrance without prior consent</td></tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>👥 Staff Training Programme</h2>
+            
+            <h3>Training Structure</h3>
+            <div class="module">
+                <p><strong>Module 1</strong> → Orientation & Venue Identity</p>
+                <p><strong>Module 2</strong> → Time-Slot Rules & Transition Protocol</p>
+                <p><strong>Module 3</strong> → Customer Code Enforcement — Practical Scenarios</p>
+                <p><strong>Module 4</strong> → Performance Night Protocols</p>
+                <p><strong>Module 5</strong> → Conflict De-escalation</p>
+                <p><strong>Module 6</strong> → Event-Type Delivery</p>
+                <p><strong>Module 7</strong> → Safety & Emergency</p>
+            </div>
+
+            <h3>Shift Reference Card</h3>
+            <pre><code>MORNING (A)  → Laptop OK, headphones req'd, no alcohol, 2hr max stay
+AFTERNOON (B) → Alcohol on, relaxed, kids OK till 17:00
+EVENING (C)   → Full bar, tables reservable
+PERFORMANCE (D) → ID at door, no standing stage, no order during sets
+
+KEY RULES — PERFORMANCE NIGHT
+✓ ID check EVERYONE
+✓ No glass on floor
+✓ No entry mid-song
+✓ No flash photography
+✓ No professional filming without booking
+✓ Zero tolerance: drugs / aggression → immediate removal
+✓ Last call 30 min before close
+
+ESCALATION LADDER
+1. Ambient approach
+2. Verbal redirect
+3. Firm boundary + state consequence
+4. Exit request
+5. SOS — do not engage alone</code></pre>
+        </section>
+
+        <section>
+            <h2>⚡ Quick Scenarios</h2>
+            
+            <div class="module">
+                <strong>S3-1: Customer on laptop with no headphones, volume too loud</strong>
+                <p>Step 1: "Hey, just a heads-up — headphones needed past this volume"</p>
+                <p>Step 2: Offer headphone if spares available</p>
+                <p>Step 3: "I need to ask you to lower it or use headphones"</p>
+                <p>Step 4: Offer alternative seating</p>
+                <p>Step 5: Escalate to manager</p>
+            </div>
+
+            <div class="module">
+                <strong>S3-2: Customer bringing outside alcohol in</strong>
+                <p>Step 1: "Hey! Just a heads-up — outside alcohol isn't permitted"</p>
+                <p>Step 2: Offer to keep behind bar till they leave</p>
+                <p>Step 3: If defensive → "It's our licence condition"</p>
+                <p>Step 4: Escalate only if aggression</p>
+            </div>
+
+            <div class="module">
+                <strong>S3-3: Customer filming during live set</strong>
+                <p>Step 1: Approach between songs — "No flash photography is fine"</p>
+                <p>Step 2: Offer to take photo on their phone</p>
+                <p>Step 3: If professional equipment → cite artist agreement</p>
+                <p>Step 4: Document for manager</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>🚨 Emergency Protocol</h2>
+            <pre><code>1. ASSESS — Is anyone in immediate danger?
+2. ALERT — Signal bar/staff without causing panic
+3. CALL  — Emergency services if needed (115 = Medical, 114 = Fire)
+4. CONTAIN — Secure the area, don't move injured persons
+5. GUIDE — Direct emergency services on arrival
+6. DOCUMENT — Incident report within 24 hours</code></pre>
+        </section>
+
+        <section>
+            <h2>📞 Emergency Contacts</h2>
+            <table>
+                <tr><th>Situation</th><th>Contact</th></tr>
+                <tr><td>Medical emergency</td><td>115</td></tr>
+                <tr><td>Fire</td><td>114</td></tr>
+                <tr><td>Police (non-emergency)</td><td>Local precinct</td></tr>
+                <tr><td>Venue manager (on-call)</td><td>[Manager number]</td></tr>
+                <tr><td>Security company</td><td>[Security number]</td></tr>
+            </table>
+        </section>
+    </div>
+
+    <footer>
+        <p><em>Document version 1.0 — CUR8 × GoodFellas</em></p>
+        <p>For internal use only. Update quarterly.</p>
+    </footer>
+</body>
+</html>
